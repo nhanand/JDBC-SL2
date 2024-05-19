@@ -1,0 +1,29 @@
+Video Steps :
+
+https://www.youtube.com/watch?v=V8_fpBE9deA
+
+open and Run or press win + R, type -> services.msc and stop "MySQL80" service.
+
+create a text file named mysql-init.txt in the root of C drive or whereever you want:
+
+e.g: C:\mysql-init.txt
+
+add the following content to your "mysql-init.txt"
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'change-this-to-your-new-password';
+
+Last Step:
+
+Open CMD with Admin rights:
+
+navigate to "C:\Program Files\MySQL\MySQL Server 8.0\bin" in CMD
+C:\Windows\system32> cd C:\Program Files\MySQL\MySQL Server 8.0\bin
+
+then Type in the command: mysqld --defaults-file="C:\ProgramData\MySQL\MySQL Server 8.0\my.ini" --init-file="C:\Users\wow\Desktop\mysql-init.txt"
+e.g:
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin> mysqld --defaults-file="C:\ProgramData\MySQL\MySQL Server 8.0\my.ini" --init-file="C:\mysql-init.txt" --console
+Now Without closing the cmd window, you can try to connect to your SQL server befor restarting your "MySQL80" service.
+
+search in your windows Searchbar for "MySQL 8.0 Command Line Client" and start it.
+
+enter your newly created password to check if it worked or not. If it works, Great! If not then just watch the Youtube Video above.
